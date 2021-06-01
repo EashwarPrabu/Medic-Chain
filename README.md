@@ -72,7 +72,7 @@ the user inputs. All these user inputs are being validated with the help of **Va
 
 ## Screen Shots:
 
-![]()
+<img src="assets/1.png" width="200">
 
 > Loading Animation
 
