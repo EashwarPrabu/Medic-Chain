@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'ScanQR.dart';
 import 'loader.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
@@ -10,12 +9,16 @@ Future main() async {
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+  String hex = "00adb5";
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'SMSME',
-      theme: ThemeData(primarySwatch: Colors.indigo),
+      theme: ThemeData(
+        primaryColor: Color(int.parse("0xff${hex}")),
+      ),
       home: Loader(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

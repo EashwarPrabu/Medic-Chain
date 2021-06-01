@@ -20,6 +20,11 @@ class BlockChain {
 //    initialSetup();
   }
 
+  // 4 IMPORTANT THINGS REQUIRED TO CONNECT WITH THE BLOCK CHAIN:
+  // 1. Account's Private Key Credentials
+  // 2. Deployed Contract's Address
+  // 3. API to easily connect with the Ethereum Network
+  // 4. ABI.json file
   setPatientDetails(
       String patientId, String name, String age, String gender) async {
     print("Calling SetPatientDetails function!!!");
@@ -43,7 +48,7 @@ class BlockChain {
     print("Patient Details Updated Successfully!!!");
   }
 
-  setMedicine(String medicineName, String dosage, String patientId) async {
+  setMedicine(String patientId, String medicineName, String dosage) async {
     httpClient = Client();
     ethClient = Web3Client(DotEnv().env['API'], httpClient);
     String abi = await rootBundle.loadString("assets/abi.json");
@@ -58,12 +63,12 @@ class BlockChain {
         Transaction.callContract(
             contract: contract,
             function: _setMedicine,
-            parameters: [medicineName, dosage, patientId]),
+            parameters: [patientId, medicineName, dosage]),
         fetchChainIdFromNetworkId: true);
     print("Medicine Details Updated Successfully!!!");
   }
 
-  setRecord(String description, String date, String patientId) async {
+  setRecord(String patientId, String description, String date) async {
     httpClient = Client();
     ethClient = Web3Client(DotEnv().env['API'], httpClient);
     String abi = await rootBundle.loadString("assets/abi.json");
@@ -78,12 +83,12 @@ class BlockChain {
         Transaction.callContract(
             contract: contract,
             function: _setRecord,
-            parameters: [description, date, patientId]),
+            parameters: [patientId, description, date]),
         fetchChainIdFromNetworkId: true);
     print("Patient Record Details Updated Successfully!!!");
   }
 
-  getPatientDetails(String patientId) async {
+  Future<List> getPatientDetails(String patientId) async {
     httpClient = Client();
     ethClient = Web3Client(DotEnv().env['API'], httpClient);
     String abi = await rootBundle.loadString("assets/abi.json");
@@ -100,9 +105,10 @@ class BlockChain {
         contract: contract, function: _getPatientDetails, params: [patientId]);
     print("Patient Details RESULT ARRIVED!!!!!");
     print(result);
+    return result;
   }
 
-  getMedicines(String patientId) async {
+  Future<List> getMedicines(String patientId) async {
     httpClient = Client();
     ethClient = Web3Client(DotEnv().env['API'], httpClient);
     String abi = await rootBundle.loadString("assets/abi.json");
@@ -116,9 +122,10 @@ class BlockChain {
         .call(contract: contract, function: _getMedicines, params: [patientId]);
     print("Medical Details RESULT ARRIVED!!!!!");
     print(result);
+    return result;
   }
 
-  getRecords(String patientId) async {
+  Future<List> getRecords(String patientId) async {
     httpClient = Client();
     ethClient = Web3Client(DotEnv().env['API'], httpClient);
     String abi = await rootBundle.loadString("assets/abi.json");
@@ -132,5 +139,6 @@ class BlockChain {
         .call(contract: contract, function: _getRecords, params: [patientId]);
     print("Patient Record Details RESULT ARRIVED!!!!!");
     print(result);
+    return result;
   }
 }
