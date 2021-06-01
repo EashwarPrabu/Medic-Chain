@@ -72,51 +72,51 @@ the user inputs. All these user inputs are being validated with the help of **Va
 
 ## Screen Shots:
 
-<img src="Assets/1.png" width="200">
+![](Assets/1.png)
 
 > Loading Animation
 
-<img src="Assets/2.png" width="200">
+![](Assets/2.png)
 
 > Home Screen
 
-<img src="Assets/12.png" width="200">
+![](Assets/12.png)
 
 > App Drawer
 
-<img src="Assets/3.png" width="200">
+![](Assets/3.png)
 
 > Form to Add Patient Details
 
-<img src="Assets/4.png" width="200">
+![](Assets/4.png)
 
 > Success Dialog Box
 
-<img src="Assets/5.png" width="200">
+![](Assets/5.png)
 
 > Errors shown by Validators if wrong input is given
 
-<img src="Assets/6.png" width="200">
+![](Assets/6.png)
 
 > Form to Add Medicinal Details
 
-<img src="Assets/7.png" width="200">
+![](Assets/7.png)
 
 > Form to Add Patient Medical History
 
-<img src="Assets/8.png" width="200">
+![](Assets/8.png)
 
 > Form to enter Patient ID to retrieve his detail
 
-<img src="Assets/9.png" width="200">
+![](Assets/9.png)
 
 > Result Page
 
-<img src="Assets/10.png" width="200">
+![](Assets/10.png)
 
 > Multiple Records shown using **ListView Widget**
 
-<img src="Assets/11.png" width="200">
+![](Assets/11.png)
 
 > Error shown when a **non-existent Patient ID** is given
 
