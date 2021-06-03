@@ -2,6 +2,32 @@
 
 Medic-Chain is a **Block Chain based Flutter Mobile Application** commonly known as **Decentralized Mobile App (DAPP)**. Our application helps to securely store and retrieve patient records by leveraging the power of Block Chain.
 
+## Steps to execute the Project:
+
+1. Install Flutter using the [Flutter installation Guide](https://flutter.dev/docs/get-started/install/windows).
+2. Clone this repository using the command:
+
+```git
+git clone https://github.com/EashwarPrabu/Medic-Chain.git
+```
+
+3. Open the project in Android Studio and create a `.env` file in the root folder.
+4. The contents of the **_.env_** file must include:
+
+```
+API=<INFURA_API_KEY>
+CONTRACT_ADDRESS=<DEPLOYED_CONTRACT_ADDRESS>
+CREDENTIAL=<METAMASK_ACCOUNT_CREDENTIALS>
+```
+
+-   The **API** key can be obtained from the [Infura API](https://infura.io/) website.
+-   Deploy the Solidity contract present in the **_Block Chain_** folder of this Repo onto the [Remix IDE](https://remix.ethereum.org/) and get access to the **Contract Address**
+-   Download the [MetaMask Chrome Extension](https://metamask.io/download.html), create an account, select the Rinkeby Test Network and copy the **Private key of your account**.
+
+5. Run the Project!
+
+# Deep Dive into Medic-Chain:
+
 ## Block Chain:
 
 A Block chain is a **decentralized, continuously growing online ledger of
@@ -31,8 +57,7 @@ The **Smart Contracts** was written using the **Solidity Programming language** 
 
 ### Block Chain Module:
 
-The Smart Contract was developed using an Online IDE called [Remix
-Editor](https://remix.ethereum.org/). This editor not only allows us to quickly develop Smart Contracts but also has several handy features to **compile and deploy** the Smart Contracts. Our Smart Contract was deployed in the **Rinkeby Test Network of the Ethereum Block Chain**. A smart contract is a computer program which automatically executes and controls according to the terms of a contract or an agreement. Its objectives is to reduce the need for trusted inter-mediators, enforcement cost as well as the reduction of malicious and accidental exceptions.
+The Smart Contract was developed using an Online IDE called [Remix Editor](https://remix.ethereum.org/). This editor not only allows us to quickly develop Smart Contracts but also has several handy features to **compile and deploy** the Smart Contracts. Our Smart Contract was deployed in the **Rinkeby Test Network of the Ethereum Block Chain**. A smart contract is a computer program which automatically executes and controls according to the terms of a contract or an agreement. Its objectives is to reduce the need for trusted inter-mediators, enforcement cost as well as the reduction of malicious and accidental exceptions.
 
 Our Smart Contract will be able to store details of any number of patients. Each patient will be required to provide his ID (Phone no / Aadhar No) to uniquely identify and retrieve his records from the Block Chain.
 
